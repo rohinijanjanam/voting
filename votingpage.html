@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cast Your Vote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .party-option { 
+      display: flex; align-items: center; margin: 18px 0; border: 1px solid #ccc; border-radius: 8px; padding: 12px; background: #f9f9f9;
+    }
+    .party-logo { 
+      width: 44px; height: 44px; background: #eee; margin-right: 16px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 26px;
+      border: 1px solid #ddd;
+    }	
+	.party-logo img{
+		width:40px;
+		height:40px;
+		object-fit:contain;
+		}	
+    .party-radio { margin-left:auto; }
+    .party-name { font-weight: bold; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <main class="center-container">
+    <h2>Cast Your Vote</h2>
+    <form id="voteForm">
+      <div class="party-option">
+        <div class="party-logo">
+		<img src="https://www.ysrcongress.com/sites/default/files/article_images/2020/03/13/YSRCP%20Logo-1.jpg"alt="YSRCP logo"></div>
+        <span class="party-name">YSRCP</span>
+        <input class="party-radio" type="radio" name="party" value="YSRCP">
+      </div>
+      <div class="party-option">
+        <div class="party-logo">
+		<img src="https://telugu.oneindia.com/img/2012/01/11-tdp-cycle11-300.jpg"alt="TDP logo"></div>
+        <span class="party-name">TDP</span>
+        <input class="party-radio" type="radio" name="party" value="TDP">
+      </div>
+      <div class="party-option">
+        <div class="party-logo">
+		<img src="https://tse2.mm.bing.net/th/id/OIP.Jop-UmRTntQenJMS7r1Q7AHaJE?pid=Api&P=0&h=180"alt="JSP logo"></div>
+        <span class="party-name">JSP</span>
+        <input class="party-radio" type="radio" name="party" value="JSP">
+      </div>
+      <div class="party-option">
+        <div class="party-logo">
+		<img src="https://tse1.mm.bing.net/th/id/OIP.gt0XwjW8FzgMrX-0-2uroQHaGR?pid=Api&P=0&h=180"alt="NOTA logo"></div>
+        <span class="party-name">NOTA</span>
+        <input class="party-radio" type="radio" name="party" value="NOTA">
+      </div>
+      <div style="margin-top:32px; display: flex; justify-content: space-between;">
+        <button type="button" class="main-btn" onclick="submitVote()">OK</button>
+        <button type="button" class="main-btn alt" onclick="location.href='cancel.html'">Cancel</button>
+      </div>
+    </form>
+  </main>
+  <script>
+    function submitVote() {
+      const choices = document.getElementsByName('party');
+      let voted = false;
+      for(let i=0;i<choices.length;i++) {
+        if(choices[i].checked) voted = true;
+      }
+      if(voted) {
+        location.href='success.html';
+      } else {
+        alert('Please select a party to cast your vote');
+      }
+    }
+  </script>
+</body>
+</html>
