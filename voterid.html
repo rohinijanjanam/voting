@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voter ID Verification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="center-container">
+    <h2>Enter Your Voter ID</h2>
+    <input type="text" id="voterid" maxlength="12" placeholder="Voter ID" class="input-field">
+    <button class="main-btn" onclick="validateVoterID()">Enter</button>
+  </main>
+  <script>
+    function validateVoterID() {
+      const voterid = document.getElementById('voterid').value.trim();
+      if(voterid.length >= 6) {
+        location.href = 'aadhaar.html';
+      } else {
+        alert('Please enter a valid Voter ID');
+      }
+    }
+  </script>
+</body>
+</html>

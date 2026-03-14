@@ -1,0 +1,31 @@
+html, body {
+  height: 100%; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #f4f8fb;
+}
+
+.center-container {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+
+h2 {
+  margin-bottom: 26px; color: #17447c; font-size: 1.8rem; text-align: center;
+}
+
+.input-field {
+  padding: 14px 18px; font-size: 1.1rem; border: 1.5px solid #ccc; border-radius: 6px;
+  margin-bottom: 18px; width: 94%; max-width: 330px; box-sizing: border-box;
+}
+
+.main-btn {
+  background: #2461bf; color: #fff; border: none; padding: 16px 44px; border-radius: 8px; font-size: 1.25rem;
+  font-weight: 500; cursor: pointer; margin: 10px 8px 0 0; transition: background 0.14s;
+}
+.main-btn:hover { background: #1d508f; }
+.main-btn.alt { background: #eee; color: #17447c; border: 1.2px solid #ccc; }
+.main-btn.alt:hover { background: #e0e0e0; }
+
+@media (max-width:600px) {
+  .center-container { padding: 22px; }
+  .input-field { width: 98%; }
+  .main-btn { width: 96%; margin:12px auto 0 auto; display: block; }
+}
